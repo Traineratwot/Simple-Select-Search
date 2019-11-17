@@ -1,0 +1,58 @@
+/* стиль зоны поиска */
+.SSO1 {
+    display: block;
+    width: 100%;
+    max-height: 100%;
+    word-wrap: none;
+    flex-wrap: nowrap;
+    word-break: keep-all;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+/* добавляем треугольник как у настоящегог селект */
+.SSO1:after {
+    float: right;
+    content: '▼';
+}
+
+/* убираем скролбар для зоны поиска */
+.SSO1::-webkit-scrollbar { 
+    display: none;
+}
+/* стиль div внутри которого все и происходит  */
+.SSOd {
+    z-index: 9999;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 0;
+    outline: none;
+    border: 1px solid;
+}
+/* стиль ul выподающего списка */
+.SSL{
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    list-style-type: none;
+    margin:0;
+    width: fit-content;
+    padding: 0;
+    width: inherit;
+    display: none;
+    padding: 5px;
+
+}
+/* стиль li выподающего списка  */
+.SSL li{
+    transition: 0.3s linear;
+    width: inherit;
+    list-style-type:none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.SSL li.SSS:hover{
+    margin-left: 0.5em;
+}
+/* стиль для псевдо optgroupы */
+li.SSotg {
+    cursor: default;
+    color: gray;
+}
