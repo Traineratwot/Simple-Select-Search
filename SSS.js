@@ -102,11 +102,15 @@ class SSO {
 	}
 
 }
+SSSstart()
 // интервал на случай процедурной генерации select'тов
 setInterval(() => {
-// выбирает все select'ы которые еще не проходили
+	SSSstart()
+}, 100);
+function SSSstart() {
+	// выбирает все select'ы которые еще не проходили
 	$('select:not([data-SSScomplete])').each(function(index) {
 		SSOarr.push(new SSO(this));
 		$(this).attr('data-SSScomplete', '');
 	});
-}, 1000);
+  }
