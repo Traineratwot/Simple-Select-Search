@@ -102,7 +102,7 @@ class SSO {
     }
 
 }
-// интревал на слючай процедурной генерации select'тов
+// интервал на случай процедурной генерации select'тов
 setInterval(() => {
 // выбирает все select'ы которые еще не проходили
     $('select:not([data-SSScomplete])').each(function(index) {
