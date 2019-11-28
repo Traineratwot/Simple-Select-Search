@@ -1,4 +1,5 @@
 /* стиль зоны поиска */
+
 .SSOd .SSO1 {
     display: block;
     width: 100%;
@@ -9,14 +10,18 @@
     overflow-x: auto;
     overflow-y: hidden;
 }
+
+
 /* добавляем треугольник как у настоящегог селект */
+
 .SSOd .SSO1:after {
     position: absolute;
     /* float: right; */
-    top:0;
+    top: 0;
     right: 0;
     content: '▼';
 }
+
 .SSOd .SSS_Search {
     display: block;
     width: 100%;
@@ -30,11 +35,16 @@
     padding: 0;
 }
 
+
 /* убираем скролбар для зоны поиска */
-.SSO1::-webkit-scrollbar { 
+
+.SSO1::-webkit-scrollbar {
     display: none;
 }
+
+
 /* стиль div внутри которого все и происходит  */
+
 .SSOd {
     z-index: 9999;
     background-color: rgba(255, 255, 255, 1);
@@ -42,43 +52,77 @@
     outline: none;
     border: 1px solid;
 }
+
+
 /* стиль ul выподающего списка */
-.SSOd .SSL{
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+
+.SSOd .SSL {
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
     padding: 5px;
     width: fit-content;
     display: none;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 1);
+    max-height: 30vh;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
-.SSOd .SSL ul{
+
+.SSOd .SSL::-webkit-scrollbar {
+    width: 5px;
+}
+
+.SSOd .SSL::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+}
+
+.SSOd .SSL::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
+}
+
+.SSOd .SSL hr {
+    margin-block-start: 1px;
+    margin-block-end: 1px;
+}
+
+.SSOd .SSL ul {
     list-style-type: none;
-    margin:0;
+    margin: 0;
     padding: 0;
 }
-.SSOd .SSL .SSS_input{
+
+.SSOd .SSL .SSS_input {
     display: block;
-    box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
     width: 100%;
-    height:1.5em;
-    margin:0;
+    height: 1.5em;
+    margin: 0;
     padding: 0;
 }
+
+
 /* стиль li выподающего списка  */
-.SSOd .SSL li{
+
+.SSOd .SSL li {
     transition: 0.3s linear;
     width: inherit;
-    list-style-type:none;
+    list-style-type: none;
     padding: 0;
     cursor: pointer;
 }
 
-.SSOd .SSL li.SSS:hover{
+.SSOd .SSL li.SSS:hover {
     margin-left: 0.5em;
 }
-.SSOd .SSL li.SSS-selected{
+
+.SSOd .SSL li.SSS-selected {
     margin-left: 0.5em;
 }
+
+
 /* стиль для псевдо optgroupы */
+
 .SSOd li.SSotg {
     cursor: default;
     color: gray;

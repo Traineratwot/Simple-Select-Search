@@ -55,9 +55,9 @@ class SSO {
             // при клике очищем зоны поика, разрешаем редактирование, начинаем генерацию списка без фильтра
             $(MAINSPAN).click(function(eeee) {
                     if (eeee.target.tagName == 'SPAN') {
-						UL = SELF.SearchUL();
-						$(PANEL).fadeIn();
-                        $(SEARCHSPAN).focus();   
+                        UL = SELF.SearchUL();
+                        $(PANEL).fadeIn();
+                        $(SEARCHSPAN).focus();
                     }
                 })
                 // при нажатии гененрируем список с фильром из строки поиска ps можно использовать регулярки :)
@@ -76,12 +76,12 @@ class SSO {
                 })
                 MAINSPAN.html($$val.join(SELF.separator));
                 $(PANEL).fadeOut();
-			});
+            });
         }
         // поискавик
     SearchUL(SearchWord = '') {
-		var MAINSPAN = this.MAINSPAN;
-		var SEARCHSPAN = this.SEARCHSPAN;
+        var MAINSPAN = this.MAINSPAN;
+        var SEARCHSPAN = this.SEARCHSPAN;
         var UL = this.UL;
         var SELF = this;
         var SST = new Object();
@@ -107,9 +107,9 @@ class SSO {
                         SST[index] = $(e).text();
                         SSV[index] = $(e).attr('value');
                         if ($(e).prop('selected') === true) {
-                            $(UL).append('<li data-SSS="' + index + '" class="SSS SSS-selected">' + $(e).text() + '</li>');
+                            $(UL).append('<li data-SSS="' + index + '" class="SSS SSS-selected">' + $(e).text() + '</li><hr>');
                         } else {
-                            $(UL).append('<li data-SSS="' + index + '" class="SSS">' + $(e).text() + '</li>');
+                            $(UL).append('<li data-SSS="' + index + '" class="SSS">' + $(e).text() + '</li><hr>');
                         }
                     }
                 }
@@ -117,8 +117,8 @@ class SSO {
             // инициализатор события для выбора значения из списка
         $(UL).find('li').click(function(eeee) {
             var index = $(eeee.target).attr('data-SSS');
-			var option = $(ELEMENT).find('option[data-SSS=' + index + ']');
-			$(SEARCHSPAN).focus();
+            var option = $(ELEMENT).find('option[data-SSS=' + index + ']');
+            $(SEARCHSPAN).focus();
             // console.log(option);
             if (option.prop('selected') === false) {
                 option.prop('selected', true);
@@ -130,7 +130,7 @@ class SSO {
                 $$val.push($(ee).text());
             })
             MAINSPAN.html($$val.join(SELF.separator));
-		});
+        });
         return UL;
     }
 }
