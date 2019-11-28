@@ -130,6 +130,7 @@ class SSO {
                 $$val.push($(ee).text());
             })
             MAINSPAN.html($$val.join(SELF.separator));
+            $(ELEMENT).trigger("change");
         });
         return UL;
     }
