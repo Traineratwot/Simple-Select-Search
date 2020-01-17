@@ -188,5 +188,13 @@
     </form>
 </body>
 <script src="SSS.js"></script>
-
+<script>
+setInterval(() => {
+// выбирает все select'ы которые еще не проходили
+    $('select:not([data-SSScomplete])').each(function(index) {
+        SSOarr.push(new SSO(this))
+        $(this).attr('data-SSScomplete', '');
+    });
+}, 1000);
+</script>
 </html>

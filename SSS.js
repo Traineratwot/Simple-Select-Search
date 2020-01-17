@@ -7,8 +7,9 @@ class SSO {
         this.separator = "<br>";
         // накладиваем новый select на старый
         var $style = {
-            'width': $(ELEMENT).width(),
-            'height': $(ELEMENT).height(),
+            width: $(ELEMENT).width(),
+            height: $(ELEMENT).height(),
+            position:'absolute',
         };
         if ($(ELEMENT).attr('multiple')) {
             var val = $(ELEMENT).val().join(SELF.separator);
@@ -20,11 +21,12 @@ class SSO {
             class: 'SSOd',
             html: $html
         }).appendTo('body');
+
+        $(MAINSPAN).css($style);
         $(MAINSPAN).offset({
             top: $(ELEMENT).offset().top,
             left: $(ELEMENT).offset().left
         });
-        $(MAINSPAN).css($style);
         $(MAINSPAN).val($(ELEMENT).val());
         var PANEL = $('<div>', {
             css: { 'width': $(ELEMENT).width() },
